@@ -1,12 +1,12 @@
-The BITinvoice project is a user friendly web platform created to provide invoicing services for freelancers,startups and business owners.BITinvoice services allows users to create and send invoices digitally.
+The Image Gallery project is a user friendly web platform created using Django to provide a ptatform for storing images as image gallery which can be accessed later using APIs and uploaded to other sites such as pinterest, facebook, instagram twitter automatically. As of now it is on online web image gallery developed using django framework
 
 #### Functionalities of the project:
-* Sign In and open dashboard
-* Create a new invoice
-* Update, Delete and existing invoice
+* Sign In or sign up
+* create and upload images
+* Update, Delete and existing images
 * Search function
-* Clients and Products and Services view
-* Sending Invoice to client via email
+* Image details view
+* Read more details about images
 
 ## Table of Content
 * [Environment](#environment)
@@ -18,7 +18,7 @@ The BITinvoice project is a user friendly web platform created to provide invoic
 * [License](#license)
 
 ## Environment
-This project is interpreted/tested on Ubuntu 20.04 LTS using Django (version 4.2.4)
+This project is interpreted/tested on Ubuntu 20.04 LTS using Django (version 4.2.8)
 
 ## Installation
 * To get started, install python3 development tools on your virtual machine.
@@ -28,17 +28,17 @@ This project is interpreted/tested on Ubuntu 20.04 LTS using Django (version 4.2
 * Install virtual environment and install django
 * `sudo -H pip3 install --upgrade pip` then `sudo -H pip3 install virtualenv`
 * Create directory and install django 
-* `mkdir project_portfolio && cd project_portfolio`
-* `virtualenv bitinvoiceenv`
-* `source bitinvoiceenv/bin/activate`
+* `mkdir Gallery && cd Gallery`
+* `virtualenv imagesenv`
+* `source imagesenv/bin/activate`
 * Install packages: `pip install django` and `pip install psycopg2`
-* Create a new django project called bitinvoice: `django-admin startproject bitinvoice`
-* `cd bitinvoice` and edit settings file with Database details
+* Create a new django project called images: `django-admin startproject images`
+* `cd images` and edit settings file with Database details
 * Run django app: `python manage.py makemigrations` then `python manage.py migrate`
 * Create a superuser: `python manage.py createsuperuser`
 * Collect static: `python manage.py collectstatic`
 * Run app: `python manage.py runserver 0.0.0.0:5000`
-* Start the app bitinvoice: `python manage.py startapp bitinvoice_01`
+* Start the app main: `python manage.py startapp main`
 
 ## File Descriptions
 [models.py](bitinvoice_01/models.py) - This are the base models for my project, the entry point to the project.
