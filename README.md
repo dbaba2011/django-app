@@ -109,18 +109,16 @@ Classes in the model:
 No known bugs at this time. 
 
 ## Authors
-* Samuel Chiemeka - [Github](https://github.com/chiemekaifemegbulem)
-
-* Bamigbopa Oluwafikayomi - [Github](https://github.com/faykey)
 * Felix Too - [Github](https://github.com/felixtoo48) 
-* dbaba2011 - [Github](https://github.com/dbaba2011)
-Second part of Airbnb: Joann Vuong
+* Gamaliel Adun - [Github](https://github.com/dbaba2011)
+* Inuwa Baba - [Github](https://github.com/)
+
 ## License
 
 MIT License
 
-`Copyright (c) 2023 Chiemeka`
-  `Ifemegbulem`
+`Copyright (c) 2023 Felix`
+  `Too`
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
