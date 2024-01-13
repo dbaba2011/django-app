@@ -41,69 +41,33 @@ This project is interpreted/tested on Ubuntu 20.04 LTS using Django (version 4.2
 * Start the app main: `python manage.py startapp main`
 
 ## File Descriptions
-[models.py](bitinvoice_01/models.py) - This are the base models for my project, the entry point to the project.
+[models.py](main/models.py) - This are the base models for my project, the entry point to the project.
 #### models - contains base classes used for this project
 Classes in the model:
-#### `Client` - This is the class containing the clients information
+#### `Category` - This is the class containing the category information
 * Basic Fields and Utility fields defined
-* `def __str__(self)` - String representation of the client name, provice and uniqueId
-* `def get_absolute_url(self)` - get url of client detail, slug
+* `def __str__(self)` - String representation of the category name, title and uniqueId
+* `def get_absolute_url(self)` - get url of category detail, slug
 * `def save(self, *args, **kwargs)` - Autosave function definition
 
-#### `Invoice` - This is the class containing the Invoice inormation
-* Basic fields, utility fields and related field(client foreign key)
-* `def __str__(self)` - String representation of the number and uniqueId
+#### `Image` - This is the class containing the Image information
+* Basic fields, utility fields related fields (foreign key)
+* `def __str__(self)` - String representation of the category title and uniqueId
 * `def get_absolute_url(self)` - get url of slug
 * `def save(self, *args, **kwargs)` - Autosave function definition
 
-#### `Product` - This is the class containing the products and services information
-* Basic fields, utility fields and related field(client foreign key)
-* `def __str__(self)` - String representation of the product title and uniqueId
-* `def get_absolute_url(self)` - get url of slug
-* `def save(self, *args, **kwargs)` - Autosave function definition
+[urls.py](main/urls.py) - Contails urls for respective paths
 
-#### `Settings` - This is the class containg the settings about the company
-* Basic fields, utility fields
-* `def __str__(self)` - String representation of the client name, provice and uniqueId
-* `def get_absolute_url(self)` - get url of client detail, slug
-* `def save(self, *args, **kwargs)` - Autosave function definition
-
-
-[functions.py](bitinvoice_01/functions.py) - Function definition for emailing invoice to the client
-* `def emailInvoiceClient(to_email, from_client, filepath)` - For emailing invoice function
-
-[forms.py](bitinvoice_01/forms.py) - Control form for information input from the front-end view
-#### forms - contains classes used for controlling form input
-#### `DateInput(forms.DateInput)` - Used to input date
-#### `UserLoginForm(forms.ModelForm)` - Class for user log in at the login page
-#### `ClientForm(forms.ModelForm)` - Class for client input form
-#### `ProductForm(forms.ModelForm)` - Class for product input form
-#### `InvoiceForm(forms.ModelForm)` - Invoice details input form
-* `def __init__(self, *args, **kwargs)` - Initializing base model
-#### `SettingsForm(forms.ModelForm)` - Company settings details input form
-#### `ClientSelectForm(forms.ModelForm)` - Client selection form
-* `def clean_client(self)` - client removal from the form
-
-[urls.py](bitinvoice_01/urls.py) - Contails urls for respective paths
-
-[views.py](bitinvoice_01/views.py) - Definition of the views rendered
+[views.py](main/views.py) - Definition of the views rendered
 #### views - views rendered/requested
 * `def anonymous_required(function=None, redirect_url=None)` - Definition for checking if one is logged in or not to be able to access dashboard, and invoice
 * `def login(request)` - Log in request
-* `def dashboard(request)` - Dashboard request definition
+* `def home(request)` - redirect to home page
 * `def index(request)` - landing page request definition
+* `def categoryPage(request, slug)` - category page request
 * `def about(request)` - about page request definition
-* `def invoices(request)` - Invoice view  request definition
-* `def products(request)` - Product view request definition
-* `def clients(request)` - Client view request definition
+* `def imageDetailPage(request, slug1, slug2)` - Image detail request
 * `def logout(request)` - Logout request
-* `def createInvoice(request)` - Create invoice
-* `def createBuildInvoice(request, slug)` - Build invoice
-* `def viewPDFInvoice(request, slug)` - View Invoice in pdf
-* `def viewDocumentInvoice(request, slug)` - view document invoice
-* `def emailDocumentInvoice(request, slug)` - email invoice document
-* `def deleteInvoice(request, slug)` - Delete invoice request
-* `def companySettings(request)' - company settings view request
 
 ## Bugs
 No known bugs at this time. 
